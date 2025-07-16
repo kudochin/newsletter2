@@ -1,0 +1,314 @@
+/* style.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: #f9f8f6;
+    /* background-image: url('back-image.jpg'); */ /* Removed for diagnosis */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-attachment: fixed; */
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff; /* Changed to solid white */
+    border-bottom: 1px solid #eee;
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #e67e22;
+}
+
+.newsletter-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0;
+    color: #34495e;
+    letter-spacing: 1px;
+}
+
+section {
+    padding: 30px 20px;
+    /* margin-bottom: 25px; */ /* Removed margin-bottom */
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Changed border color for better contrast */
+    position: relative; /* For overlay */
+    overflow: hidden; /* To contain background image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Add subtle shadow */
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px 20px 40px 20px; /* Adjusted padding-bottom */
+    background-color: #fff; /* Changed back to white */
+    border-radius: 8px; /* Re-added border-radius */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Re-added box-shadow */
+    position: relative; /* Added position relative */
+    z-index: 1; /* Added z-index */
+}
+
+section h2, section h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#hero h2 {
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+.problem-list {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+strong {
+    color: #e67e22;
+}
+
+#reason h3, #introduction h3, #benefits h3, #cta h3 {
+    font-size: 24px;
+    border-bottom: 2px solid #e67e22;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.benefit-item {
+    margin-bottom: 25px;
+}
+
+.benefit-item h4 {
+    font-size: 20px;
+    color: #34495e;
+    border-left: 4px solid #e67e22;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.benefit-item ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.benefit-item ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.benefit-item ul li::before {
+    content: '✔';
+    color: #e67e22;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.cta-lead {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 30px 0 15px;
+}
+
+.cta-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e67e22;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.4); /* Add shadow */
+    animation: pulse 2s infinite; /* Add pulse animation */
+}
+
+.cta-button:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.6); /* Stronger shadow on hover */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.disclaimer {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+    background-color: #fff; /* Added solid white background */
+}
+
+footer hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+/* Section specific styles for background images and overlays */
+.section-with-bg {
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */ /* Removed for better layering */
+    color: #fff; /* Text color for sections with dark backgrounds */
+    padding: 60px 20px; /* More padding for background sections */
+}
+
+.section-with-bg .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjusted transparency */
+    z-index: 0;
+}
+
+.section-with-bg > * {
+    position: relative;
+    z-index: 1; /* Ensure content is above overlay */
+}
+
+#hero {
+    background-image: url('dmitriy-frantsev-SIqmq_6726Y-unsplash.jpg');
+}
+
+#reason {
+    background-image: url('jaspinder-singh-vpVE1Xk1eR4-unsplash.jpg');
+}
+
+#introduction {
+    background-image: url('jd-mason-xCPdjitY5sQ-unsplash.jpg');
+}
+
+/* Adjust text color for sections with background images */
+#hero h2, #hero p, #hero strong,
+#reason h3, #reason p, #reason strong,
+#introduction h3, #introduction p, #introduction strong {
+    color: #fff;
+}
+
+/* Adjust problem-list background for readability on dark background */
+#hero .problem-list {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Behind content and overlay */
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        margin: 15px;
+        max-width: none; /* Remove max-width on smaller screens */
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #hero h2 {
+        font-size: 22px;
+    }
+
+    #reason h3, #introduction h3, #benefits h3, #cta h3 {
+        font-size: 20px;
+    }
+
+    .cta-button {
+        width: 90%;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .section-with-bg {
+        padding: 40px 15px;
+    }
+}
