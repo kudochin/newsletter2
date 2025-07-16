@@ -7,8 +7,8 @@ body {
     background-color: #f9f8f6;
     margin: 0;
     scroll-behavior: smooth;
-    word-break: keep-all; /* Prevent breaking in the middle of words */
     overflow-wrap: break-word; /* Allow breaking long words if necessary */
+    line-break: strict; /* Apply strict line-breaking rules for Japanese */
 }
 
 h1, h2, h3, h4 {
