@@ -6,6 +6,7 @@ body {
     color: #333;
     background-color: #f9f8f6;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 {
@@ -19,6 +20,10 @@ header {
     padding: 20px 0;
     background-color: #fff;
     border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 header nav {
@@ -31,7 +36,7 @@ header nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Adjust spacing between items */
+    gap: 30px;
 }
 
 header nav ul li a {
@@ -39,6 +44,7 @@ header nav ul li a {
     color: #34495e;
     font-weight: bold;
     transition: color 0.3s ease;
+    padding: 5px 10px;
 }
 
 header nav ul li a:hover {
@@ -63,18 +69,17 @@ header h1 {
 main {
     max-width: 800px;
     margin: 30px auto;
-    padding: 20px 20px 40px 20px;
+    padding: 0;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
+    overflow: hidden;
 }
 
 section {
-    padding: 30px 20px;
+    padding: 40px 30px;
     text-align: left;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #eee;
     position: relative;
     overflow: hidden;
 }
@@ -87,10 +92,20 @@ section p, section li {
     position: relative;
     background-size: cover;
     background-position: center;
-    padding: 80px 20px;
+    padding: 80px 40px;
     color: #fff;
     text-align: center;
+    margin-left: -30px;
+    margin-right: -30px;
 }
+
+main > .section-with-bg:first-child {
+    margin-top: 0;
+}
+main > section:last-child {
+    border-bottom: none;
+}
+
 
 .section-with-bg::before {
     content: '';
@@ -109,7 +124,7 @@ section p, section li {
 }
 
 #hero {
-    /* background-image: url('dmitriy-frantsev-SIqmq_6726Y-unsplash.jpg'); */
+    /* background-image is handled by video */
 }
 
 #reason {
@@ -153,12 +168,9 @@ section p, section li {
     background-size: cover;
 }
 
-section:last-child {
-    border-bottom: none;
-}
-
 section h2, section h3 {
     text-align: center;
+    margin-top: 0;
     margin-bottom: 25px;
 }
 
@@ -171,11 +183,12 @@ section h2, section h3 {
     font-style: italic;
     text-align: center;
     padding: 15px;
-    margin: 20px 0;
-    border: 1px solid #ddd;
+    margin: 20px auto;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #000 !important;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    max-width: 90%;
 }
 
 strong {
@@ -191,6 +204,7 @@ strong {
 
 .benefit-item {
     margin-bottom: 25px;
+    text-align: left;
 }
 
 .benefit-item h4 {
@@ -230,6 +244,7 @@ strong {
 .cta-button {
     display: block;
     width: 80%;
+    max-width: 500px;
     margin: 0 auto;
     background-color: #c0a062;
     color: #fff;
@@ -249,11 +264,9 @@ strong {
     box-shadow: 0 6px 15px rgba(230, 126, 34, 0.6);
 }
 
-
-
 .disclaimer {
     font-size: 14px;
-    color: #777;
+    color: #eee;
     text-align: center;
     margin-top: 15px;
 }
@@ -261,10 +274,10 @@ strong {
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 0;
     font-size: 12px;
     color: #888;
-    background-color: #fff;
+    background-color: #f9f8f6;
 }
 
 footer hr {
@@ -273,56 +286,103 @@ footer hr {
     margin-bottom: 15px;
 }
 
+/* === RESPONSIVE DESIGN === */
 
-
-.background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    background-size: cover;
+@media (max-width: 900px) {
+    main {
+        margin: 20px;
+    }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .introduction-content {
-        flex-direction: column;
+    body {
+        line-height: 1.7;
     }
 
-    main {
-        margin: 15px;
-        max-width: none;
-    }
-
-    header h1 {
-        font-size: 22px;
+    header {
+        padding: 15px 0;
     }
 
     header nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    main {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    section {
+        padding: 30px 20px;
+    }
+
+    .section-with-bg {
+        padding: 60px 20px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
     }
 
     #hero h2 {
+        font-size: 24px;
+    }
+
+    #reason h3, #introduction h3, #benefits h3, #cta h3 {
         font-size: 22px;
+    }
+
+    .benefit-item h4 {
+        font-size: 18px;
+    }
+
+    .cta-button {
+        width: 95%;
+        padding: 18px;
+        font-size: 18px;
+    }
+
+    .problem-list {
+        padding: 15px;
+        font-size: 15px;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .newsletter-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    #hero h2 {
+        font-size: 21px;
     }
 
     #reason h3, #introduction h3, #benefits h3, #cta h3 {
         font-size: 20px;
     }
 
+    section p, section li {
+        font-size: 15px;
+    }
+
     .cta-button {
-        width: 90%;
         padding: 15px;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .section-with-bg {
-        padding: 40px 15px;
+        padding: 50px 15px;
     }
 }
