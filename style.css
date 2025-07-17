@@ -284,6 +284,10 @@ footer hr {
     margin-bottom: 15px;
 }
 
+.no-wrap {
+    display: inline-block;
+}
+
 /* === RESPONSIVE DESIGN === */
 
 @media (max-width: 900px) {
