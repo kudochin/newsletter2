@@ -285,7 +285,7 @@ footer hr {
 }
 
 .no-wrap {
-    display: inline-block;
+    white-space: nowrap;
 }
 
 /* === RESPONSIVE DESIGN === */
